@@ -15,7 +15,7 @@ class GamesCuadro extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 21, vertical: 20),
       margin: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 15),
       decoration: BoxDecoration(
-        color: context.theme.colorScheme.primaryVariant,
+        color: const Color(0xFF8c91A3).withOpacity(0.2),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -29,11 +29,11 @@ class GamesCuadro extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  head('Nickname', 6),
-                  head('Status', 3),
-                  head('K', 1),
-                  head('D', 1),
-                  head('A', 1),
+                  head('Nickname', 6, context),
+                  head('Status', 3, context),
+                  head('K', 1, context),
+                  head('D', 1, context),
+                  head('A', 1, context),
                 ],
               ),
             ),
@@ -102,6 +102,7 @@ class GamesCuadro extends StatelessWidget {
   Flexible head(
     String value,
     int flex,
+    BuildContext context,
   ) {
     return Flexible(
       flex: flex,
@@ -110,7 +111,9 @@ class GamesCuadro extends StatelessWidget {
         child: AutoSizeText(
           value,
           maxLines: 1,
-          // style: context.theme.textTheme.bodyText1,
+          style: context.theme.textTheme.bodyText1!.copyWith(
+            color: const Color(0xFFA7ADAA),
+          ),
         ),
       ),
     );
@@ -121,10 +124,7 @@ class GamesCuadro extends StatelessWidget {
       flex: 1,
       child: Container(
         alignment: Alignment.center,
-        child: AutoSizeText(
-          value.toString(),
-          style: context.theme.textTheme.headline6,
-        ),
+        child: AutoSizeText(value.toString(), style: context.theme.textTheme.headline5!.copyWith(color: context.theme.colorScheme.primary)),
       ),
     );
   }

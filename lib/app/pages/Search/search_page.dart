@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:ranked/app/pages/Search/controller.dart';
+import 'package:ranked/app/pages/Search/widgets/chats.dart';
 import 'package:ranked/app/pages/Search/widgets/header.dart';
 import 'package:ranked/app/pages/Search/widgets/players.dart';
 import 'package:ranked/app/widgets/loading.dart';
@@ -27,30 +28,44 @@ class SearchPage extends GetView<SearchController> {
               ),
             ),
             Expanded(
-              flex: 8,
+              flex: 10,
               child: controller.obx(
                   (state) => Column(
                         children: [
                           Expanded(
-                            child: Container(
-                              child: Column(
-                                children: [
-                                  Flexible(
-                                    child: GamesCuadro(
-                                      users: state!.sublist(0, 5),
-                                    ),
+                            flex: 3,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Flexible(
+                                  child: GamesCuadro(
+                                    users: state!.sublist(0, 5),
                                   ),
-                                  Flexible(
-                                    child: GamesCuadro(
-                                      users: state.sublist(5, 10),
-                                    ),
-                                  )
-                                ],
-                              ),
+                                ),
+                                const SizedBox(height: 15),
+                                Flexible(
+                                  child: GamesCuadro(
+                                    users: state.sublist(5, 10),
+                                  ),
+                                )
+                              ],
                             ),
                           ),
                           Expanded(
-                            child: Container(),
+                            flex: 2,
+                            child: Obx(
+                              () => !controller.showChat.value
+                                  ? Container(
+                                      alignment: Alignment.center,
+                                      child: ElevatedButton(
+                                        child: const Text('Ver Chat'),
+                                        onPressed: () {
+                                          controller.getChats();
+                                        },
+                                      ),
+                                    )
+                                  : ChatInGameWidget(chats: controller.chats),
+                            ),
                           ),
                         ],
                       ),
