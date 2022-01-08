@@ -1,16 +1,18 @@
-# ranked
+# CUSTOM CLIENT RGC APP
 
-A new Flutter project.
+ La applicacion aun esta en proceso de desarrollo,por lo que faltan corregir algunas cosas
+ 
+ ## SCREENSHOTS
 
-## Getting Started
+![sf](https://raw.githubusercontent.com/azrahel98/ClientRGC/main/assets/ss/games.jpg)
+- pantalla de los ultimos juegos y sus indicadores
+- la imagen del usuario es la misma que tengo en mi perfil de rgc
 
-This project is a starting point for a Flutter application.
+![sf](https://raw.githubusercontent.com/azrahel98/ClientRGC/main/assets/ss/menu.jpg)
+- el menu de la aplicacion donde el homo es los games del room principal y el corazon es de los dynamic
+- tambien se puede cambiar el thema (aun en proceso)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![sf](https://raw.githubusercontent.com/azrahel98/ClientRGC/main/assets/ss/searhbygameid.jpg)
+- aqui podemos ver todos los jugadores del game y sus kda
+- tambien se puede ver el chat del game
+## Esta parte aun esta en desarollo
