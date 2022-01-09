@@ -27,7 +27,10 @@ class GlobalPage extends StatelessWidget {
             ),
             Expanded(
               flex: 6,
-              child: GamesList(games: games),
+              child: GamesList(
+                games: games,
+                isDynamic: isGlobal,
+              ),
             ),
           ],
         ),

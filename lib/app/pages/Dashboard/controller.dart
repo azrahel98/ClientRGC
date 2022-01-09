@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:ranked/api/domain/entities/global/games.dart';
 import 'package:ranked/api/domain/entities/user.dart';
 import 'package:ranked/api/repositories/dashboard.dart';
+import 'package:ranked/app/settings/pages.dart';
 
 class DashboardController extends GetxController with StateMixin {
   DashboardRepository dash;
@@ -44,8 +45,8 @@ class DashboardController extends GetxController with StateMixin {
     }
   }
 
-  changeThema() {
-    Get.changeThemeMode(Get.isDarkMode ? ThemeMode.light : ThemeMode.dark);
-    update(['menu']);
+  changeThema() async {
+    await dash.logout();
+    Get.offAllNamed(Routes.LOGIN);
   }
 }

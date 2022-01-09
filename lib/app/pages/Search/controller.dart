@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:get/state_manager.dart';
 import 'package:ranked/api/domain/entities/chats/chat.dart';
@@ -19,10 +21,16 @@ class SearchController extends GetxController with StateMixin<List<UserInGame>> 
 
   @override
   void onReady() async {
-    change(null, status: RxStatus.loading());
-    var users = await search.getGameDetails(gameSelect!.gameId!, isDynamic!);
-    change(users, status: RxStatus.success());
-    super.onReady();
+    try {
+      change(null, status: RxStatus.loading());
+      log(isDynamic.toString());
+      var users = await search.getGameDetails(gameSelect!.gameId!, isDynamic!);
+      change(users, status: RxStatus.success());
+      super.onReady();
+    } catch (e) {
+      log('erorr');
+      log(e.toString());
+    }
   }
 
   getChats() async {

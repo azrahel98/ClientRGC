@@ -12,4 +12,5 @@ abstract class DashboardRepository {
   Future<List<GamesLine>> gamesinLineDynamic();
   String user();
   Future<User> usuario();
+  Future<void> logout();
 }

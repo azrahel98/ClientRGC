@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -34,7 +35,7 @@ class GamesList extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () async {
-                  await Get.toNamed(Routes.SEARCH, arguments: [games[index], isDynamic]);
+                  await Get.toNamed(Routes.SEARCH, arguments: [games[index], isDynamic!]);
                 },
                 child: _cargGames(context, index),
               );
@@ -63,7 +64,11 @@ class GamesList extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.only(right: 10),
               child: ClipOval(
-                child: Image.network(games[index].urlPath!),
+                child: Image(
+                  image: CachedNetworkImageProvider(
+                    games[index].urlPath!,
+                  ),
+                ),
               ),
             ),
           ),

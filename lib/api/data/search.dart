@@ -17,7 +17,7 @@ class SearchImpl extends SearchRepository {
       var result = html.parseUsersInGame(data!);
       return result;
     } catch (e) {
-      log(e.toString());
+      log('pasado un error');
       return [];
     }
   }

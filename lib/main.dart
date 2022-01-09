@@ -24,10 +24,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'rankedapp',
       debugShowCheckedModeBanner: false,
-      theme: Themes.light,
+      theme: Themes.dark,
       getPages: Pages.pages,
       initialRoute: Routes.SPLASH,
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.dark,
       darkTheme: Themes.dark,
       enableLog: true,
       initialBinding: MainBinding(),
@@ -39,8 +39,6 @@ class MyApp extends StatelessWidget {
 void settings() {
   SystemChrome.setSystemUIOverlayStyle(
     // ignore: prefer_const_constructors
-    SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        systemNavigationBarColor: Colors.black),
+    SystemUiOverlayStyle(statusBarColor: Colors.transparent, systemNavigationBarColor: Colors.black),
   );
 }

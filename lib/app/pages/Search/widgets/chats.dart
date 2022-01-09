@@ -12,7 +12,7 @@ class ChatInGameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 15, vertical: 10),
+      padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width / 50, vertical: 10),
       child: ListView.builder(
         itemCount: chats.length,
         itemBuilder: (context, index) => Container(
@@ -29,10 +29,11 @@ class ChatInGameWidget extends StatelessWidget {
 
   Container getlineChat(ChatinGame chat) {
     return Container(
-      color: const Color(0xFF8c91A3).withOpacity(0.2),
+      padding: EdgeInsets.zero,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
         children: [
           Flexible(
             flex: 1,
@@ -45,6 +46,7 @@ class ChatInGameWidget extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(width: 5),
           Flexible(
             flex: 1,
             child: Container(
@@ -53,6 +55,7 @@ class ChatInGameWidget extends StatelessWidget {
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: ischatStatus(chat.chatTipe)),
             ),
           ),
+          const SizedBox(width: 5),
           Flexible(
             flex: 4,
             child: SizedBox(
@@ -66,11 +69,10 @@ class ChatInGameWidget extends StatelessWidget {
           ),
           Flexible(
             flex: 6,
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               child: AutoSizeText(
                 chat.message,
-                maxLines: 1,
                 style: Get.theme.textTheme.subtitle1!.copyWith(fontSize: 10, color: Colors.white),
               ),
             ),
@@ -83,11 +85,13 @@ class ChatInGameWidget extends StatelessWidget {
   Color ischatStatus(String text) {
     switch (text) {
       case 'SENTINEL':
-        return Colors.green;
+        return Colors.green.withOpacity(0.4);
+        ;
       case 'SCOURGE':
-        return Colors.red;
+        return Colors.red.withOpacity(0.4);
       default:
-        return Colors.blue;
+        return Colors.blue.withOpacity(0.6);
+        ;
     }
   }
 }

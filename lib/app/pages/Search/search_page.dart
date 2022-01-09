@@ -31,6 +31,8 @@ class SearchPage extends GetView<SearchController> {
               flex: 10,
               child: controller.obx(
                   (state) => Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             flex: 3,
@@ -52,7 +54,7 @@ class SearchPage extends GetView<SearchController> {
                             ),
                           ),
                           Expanded(
-                            flex: 2,
+                            flex: 3,
                             child: Obx(
                               () => !controller.showChat.value
                                   ? Container(

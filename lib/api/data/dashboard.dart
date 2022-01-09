@@ -86,4 +86,9 @@ class DashboardImpl extends DashboardRepository {
       rethrow;
     }
   }
+
+  @override
+  Future<void> logout() async {
+    await box.erase();
+  }
 }
