@@ -35,11 +35,13 @@ class DashBoardPage extends GetWidget<DashboardController> {
                   usuario: controller.usuario!,
                   games: controller.gamesglobal!,
                   isGlobal: false,
+                  close: () => fabKey.currentState!.close(),
                 ),
                 GlobalPage(
                   usuario: controller.usuario!,
                   isGlobal: true,
                   games: controller.gamesDynamic!,
+                  close: () => fabKey.currentState!.close(),
                 ),
               ],
             ),

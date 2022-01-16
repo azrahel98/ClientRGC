@@ -11,8 +11,9 @@ import 'package:ranked/app/settings/pages.dart';
 class GamesList extends StatelessWidget {
   final List<GamesLine> games;
   final bool? isDynamic;
+  final Function close;
 
-  const GamesList({Key? key, required this.games, this.isDynamic = false}) : super(key: key);
+  const GamesList({Key? key, required this.games, this.isDynamic = false, required this.close}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,7 @@ class GamesList extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () async {
+                  close();
                   await Get.toNamed(Routes.SEARCH, arguments: [games[index], isDynamic!]);
                 },
                 child: _cargGames(context, index),

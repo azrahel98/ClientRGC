@@ -10,7 +10,8 @@ class GlobalPage extends StatelessWidget {
   final User usuario;
   final bool? isGlobal;
   final List<GamesLine> games;
-  const GlobalPage({Key? key, required this.usuario, this.isGlobal = true, required this.games}) : super(key: key);
+  final Function() close;
+  const GlobalPage({Key? key, required this.usuario, this.isGlobal = true, required this.games, required this.close}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,6 +31,7 @@ class GlobalPage extends StatelessWidget {
               child: GamesList(
                 games: games,
                 isDynamic: isGlobal,
+                close: close,
               ),
             ),
           ],

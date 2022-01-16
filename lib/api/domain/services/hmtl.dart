@@ -234,9 +234,39 @@ Future<String?> getStringPath(String name) async {
     case 'Shadow Fiend':
       return '${url}never.png';
     case 'Tormented Soul':
-      return '${url}never.png';
-    case 'Lifestealer':
-      return '${url}never.png';
+      return '${url}lesrac.png';
+    case 'Earth Spirit':
+      return '${url}earth.png';
+    case 'Winter Wyvern':
+      return '${url}winter.png';
+    case 'Void':
+      return '${url}void.png';
+    case 'Prophet':
+      return '${url}furion.png';
+    case 'Clockwerk Goblin':
+      return '${url}clock.png';
+    case 'Dragon Knight':
+      return '${url}dk.png';
+    case 'Tinker':
+      return '${url}tinker.png';
+    case 'Morphling':
+      return '${url}morphing.png';
+    case 'Doom Bringer':
+      return '${url}doom.png';
+    case 'Nerubian Weaver':
+      return '${url}weaver.png';
+    case 'Batrider':
+      return '${url}batrider.png';
+    case 'Bloodseeker':
+      return '${url}blood.png';
+    case 'Beastmaster':
+      return '${url}rexar.png';
+    case 'Queen of Pain':
+      return '${url}queen.png';
+    case 'Lord of Olympia':
+      return '${url}zeus.png';
+    case 'Lightning Revenant':
+      return '${url}razor.png';
     default:
       return '${url}sapo.png';
   }
